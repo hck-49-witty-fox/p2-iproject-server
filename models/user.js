@@ -1,4 +1,5 @@
 'use strict';
+const bcrypt = require('bcryptjs');
 const {
   Model
 } = require('sequelize');
@@ -11,15 +12,68 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.hasOne(models.Profile)
     }
   }
   User.init({
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: `Username has been taken`
+      },
+      validate: {
+        notEmpty: {
+          msg: `Username is Required`
+        },
+        notNull: {
+          msg: `Username is Required`
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: `Email has been taken`
+      },
+      validate: {
+        notEmpty: {
+          msg: `Email is Required`
+        },
+        notNull: {
+          msg: `Email is Required`
+        },
+        isEmail: {
+          msg: `Email is Invalid`
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: `Password is Required`
+        },
+        notNull: {
+          msg: `Password is Required`
+        },
+        isAlphanumeric: {
+          msg: `Password must alphanumeric`
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',
   });
+
+  User.beforeCreate((value) => {
+    let salt = bcrypt.genSaltSync(10);
+    let hash = bcrypt.hashSync(value.password, salt);
+    value.password = hash
+  })
+
   return User;
 };

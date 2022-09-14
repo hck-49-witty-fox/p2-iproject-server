@@ -4,6 +4,7 @@
   "description": "Individual Project - Server",
   "main": "index.js",
   "scripts": {
+    "dev": "npx nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "seqRet": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all"
   },
@@ -19,10 +20,12 @@
   },
   "homepage": "https://github.com/MEclihpse/p2-iproject-server#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
+    "google-auth-library": "^8.5.1",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.8.0",
     "sequelize": "^6.21.4"
