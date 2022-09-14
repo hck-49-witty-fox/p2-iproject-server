@@ -1,0 +1,55 @@
+{
+  "Users": [
+    {
+      "username": "Nunin",
+      "email": "nunin@mail.com",
+      "password": "12345",
+      "profile": {
+        "firstname": "Nunin",
+        "lastname": "",
+        "gender": "Female",
+        "address": "",
+        "location": "",
+        "phonenumber": "",
+        "birthdate": "",
+        "weight": "",
+        "height": "",
+        "UserId": ""
+      }
+    },
+    {
+      "username": "Farid",
+      "email": "farid@mail.com",
+      "password": "12345",
+      "profile": {
+        "firstname": "Farid",
+        "lastname": "",
+        "gender": "Male",
+        "address": "",
+        "location": "",
+        "phonenumber": "",
+        "birthdate": "",
+        "weight": "",
+        "height": "",
+        "UserId": ""
+      }
+    },
+    {
+      "username": "Ula",
+      "email": "ula@mail.com",
+      "password": "12345",
+      "profile": {
+        "firstname": "Ula",
+        "lastname": "",
+        "gender": "Female",
+        "address": "",
+        "location": "",
+        "phonenumber": "",
+        "birthdate": "",
+        "weight": "",
+        "height": "",
+        "UserId": ""
+      }
+    }
+  ]
+}
