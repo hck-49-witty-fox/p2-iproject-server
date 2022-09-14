@@ -1,7 +1,6 @@
-// const ThreadController = require('../controllers/threadController');
-// const router = require('express').Router();
+const ThreadController = require('../controllers/threadController');
+const router = require('express').Router();
 
-// // router.get('/threads', UserController.loginHandler);
+router.get('/:id', ThreadController.getThreadById);
 
-// module.exports = router;
-//
+module.exports = router;

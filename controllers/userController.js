@@ -52,6 +52,23 @@ class UserController {
       console.log(err);
     }
   }
+
+  //GET-USER-WITH-THREAD
+  static async getUserWithThread(req, res, next) {
+    try {
+      const data = await User.findAll({
+        include: ['Threads'],
+      });
+
+      res.status(200).json({
+        statusCode: 200,
+        message: 'Successfully read data',
+        data,
+      });
+    } catch (err) {
+      next(err);
+    }
+  }
 }
 
 module.exports = UserController;

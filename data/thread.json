@@ -13,5 +13,62 @@
     "imgUrl": "https://i.redd.it/etponhdr9on91.png",
     "UserId": 1,
     "CategoryId": 1
+  },
+
+  {
+    "title": "Some radiohead art I made (Kid A-HTTT)",
+    "content": "",
+    "imgUrl": "https://i.redd.it/uot6j5duykn91.jpg",
+    "UserId": 1,
+    "CategoryId": 1
+  },
+
+  {
+    "title": "GitHub contribution",
+    "content": "Hi, everyone! I'm currently learning fullstack development on The Odin Project in hope to get a job after i finished it. and am constantly committing to github everyday.Question is, is it ok to commit my practice project and no 'Real Project' on github? Or is it going to look bad to any future potential employer?",
+    "imgUrl": "",
+    "UserId": 2,
+    "CategoryId": 2
+  },
+
+  {
+    "title": "Apart from learning languages, what else you've done in programming which helped you in becoming exceptionally good at it?",
+    "content": "What do you read or what do you do on a daily basis, that boosted your love for CS which sets you apart from an average programmer?",
+    "imgUrl": "",
+    "UserId": 2,
+    "CategoryId": 2
+  },
+
+  {
+    "title": "How to conceptually understand recursion and think recursively",
+    "content": "I'm trying to learn some DSA and get proficient in it but I'm struggling big time with recursion. I've always been good at thinking iteratively but I just CAN NOT for the life of me get myself to think recursively about a problem that can and should be solved by recursion.",
+    "imgUrl": "",
+    "UserId": 2,
+    "CategoryId": 2
+  },
+
+  {
+    "title": "In Thor: Love and Thunder (2022), Miek’s drawing depicts the whole story of the movie.",
+
+    "content": "Hi, everyone! I'm currently learning fullstack development on The Odin Project in hope to get a job after i finished it. and am constantly committing to github everyday.Question is, is it ok to commit my practice project and no 'Real Project' on github? Or is it going to look bad to any future potential employer?",
+    "imgUrl": "",
+    "UserId": 3,
+    "CategoryId": 3
+  },
+
+  {
+    "title": "In Lightyear (2022), scream canisters from Monsters, Inc. (2002) are visible in the background.",
+    "content": "What do you read or what do you do on a daily basis, that boosted your love for CS which sets you apart from an average programmer?",
+    "imgUrl": "https://preview.redd.it/u94q4wensnn91.jpg?width=960&crop=smart&auto=webp&s=6ab946c4f0b0f546bc138af87606afaa30acb6c6",
+    "UserId": 3,
+    "CategoryId": 3
+  },
+
+  {
+    "title": "In Robots (2005), when Rodney's boss fired him, scolded him, and insulted both his father and him, Rodney's temperate gauge goes up with the meter hand going right when he's mad at his boss for his words. This is a nice touch when people get angry; our bodies are heated up.",
+    "content": "",
+    "imgUrl": "https://preview.redd.it/fuet3fvuh4n91.png?width=358&format=png&auto=webp&s=1ddead7c2e97f341d49d72c80fe37becbe7ea1ed",
+    "UserId": 3,
+    "CategoryId": 3
   }
 ]
