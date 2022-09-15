@@ -12,7 +12,7 @@ router.get("/calculate/:username", Controller.loveCalculate);
 router.get("/user", Controller.getAllUser);
 
 router.post("/match/:userId", Controller.postMatch);
-router.get("/match/:userId");
+// router.get("/match/:userId");
 // router.patch("/match/:id");
 
 router.use(errorHandlers);
