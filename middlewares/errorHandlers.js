@@ -1,5 +1,5 @@
 const errorHandlers = async (err, req, res, next) => {
-  console.log(err);
+  // console.log(err);
   if (err.name === "SequelizeValidationError" || err.name === "SequelizeUniqueConstraintError" || err.name === "400") {
     res.status(400).json({
       statusCode: 400,

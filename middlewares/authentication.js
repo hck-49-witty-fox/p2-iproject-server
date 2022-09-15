@@ -1,5 +1,5 @@
 const { User } = require("../models");
-const { verifyPayload } = require("../helpers/helper");
+const { tokenToPayload } = require("../helpers/helper");
 
 const authentication = async (req, res, next) => {
   try {
@@ -8,15 +8,16 @@ const authentication = async (req, res, next) => {
       throw { name: "401" };
     }
 
-    const payload = verifyPayload(access_token);
+    const payload = tokenToPayload(access_token);
+
     const user = await User.findByPk(payload.id);
     if (!user) {
       throw { name: "401" };
     }
-
     req.user = {
       id: user.id,
       email: user.email,
+      username: user.username,
     };
 
     next();

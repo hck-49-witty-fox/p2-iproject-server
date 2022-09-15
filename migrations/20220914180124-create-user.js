@@ -30,6 +30,12 @@ module.exports = {
       birthyear: {
         type: Sequelize.INTEGER,
       },
+      location: {
+        type: Sequelize.STRING,
+      },
+      imgUrl: {
+        type: Sequelize.TEXT,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

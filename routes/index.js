@@ -3,22 +3,17 @@ const Controller = require("../controllers/controller");
 const errorHandlers = require("../middlewares/errorHandlers");
 const authentication = require("../middlewares/authentication");
 
-router.post("/register", Controller.writeUser);
-router.post("/login");
+router.post("/register", Controller.register);
+router.post("/login", Controller.login);
 
 router.use(authentication);
 
-router.post("/profile");
-router.get("/profile");
-router.get("/profile/:userId");
-router.put("/profile/:userId");
+router.get("/calculate/:username", Controller.loveCalculate);
+router.get("/user", Controller.getAllUser);
 
-router.post("/hobbies");
-router.get("/hobbies");
-
-router.post("/match/:userId");
+router.post("/match/:userId", Controller.postMatch);
 router.get("/match/:userId");
-router.patch("/match/:id");
+// router.patch("/match/:id");
 
 router.use(errorHandlers);
 
