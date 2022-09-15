@@ -7,9 +7,10 @@ const user = require('./user');
 // const thread = require('./thread');
 
 //landing page
-router.get('/home', ThreadController.getThread);
+router.get('/', ThreadController.getThread);
 
 router.use('/user', user);
+
 router.use('/thread', thread);
 
 router.use(errorHandler);
