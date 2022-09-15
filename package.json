@@ -4,6 +4,8 @@
   "description": "Individual Project - Server",
   "main": "index.js",
   "scripts": {
+    "dev": "NODE_ENV=development npx nodemon app.js",
+    "start": "node app.js",
     "db:dev": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
