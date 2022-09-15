@@ -37,16 +37,19 @@ class UserController {
   //REGISTER-HANDLER
   static async registerHandler(req, res, next) {
     try {
-      const { email, password } = req.body;
+      const { username, firstName, lastName, password } = req.body;
 
       const data = await User.create({
-        email,
+        username,
+        firstName,
+        lastName,
         password,
       });
 
       res.status(201).json({
-        id: data.id,
-        email: data.email,
+        message: 'Register success',
+        // id: data.id,
+        // email: data.email,
       });
     } catch (err) {
       console.log(err);
