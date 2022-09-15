@@ -1,34 +1,20 @@
 # Yalaw forum
 
-## Models :
-
-_User_
-
-```
-- username : string, required, unique
-- password : string, required
-```
-
 ## Endpoints :
 
 List of available endpoints:
 
-- `POST /register`
-- `POST /login`
+- `POST /user/register`
+- `POST /user/login`
 
-Routes below need authentication:
+- `GET /thread/tech`
+- `GET /thread/:id`
 
-- `GET /courses`
-- `POST /mycourses/:courseId`
-- `GET /mycourses`
-
-Routes below need authentication & authorization:
-
-- `PATCH /mycourses/:id`
+- `GET /`
 
 &nbsp;
 
-## 1. POST /register
+## 1. POST /user/register
 
 Request:
 
@@ -36,8 +22,9 @@ Request:
 
 ```json
 {
-  "email": "string",
-  "name": "string",
+  "username": "string",
+  "firstName": "string",
+  "lastName": "string",
   "password": "string"
 }
 ```
@@ -46,9 +33,7 @@ _Response (201 - Created)_
 
 ```json
 {
-  "id": "integer",
-  "name": "string",
-  "email": "string"
+  "message": "string"
 }
 ```
 
@@ -78,7 +63,7 @@ OR
 
 &nbsp;
 
-## 2. POST /login
+## 2. POST user/login
 
 Request:
 
@@ -96,7 +81,9 @@ _Response (200 - OK)_
 ```json
 {
   "access_token": "string",
-  "username": "string"
+  "username": "string",
+  "name": "string",
+  "fullName": "string"
 }
 ```
 
@@ -122,11 +109,49 @@ _Response (401 - Unauthorized)_
 
 &nbsp;
 
-## 3. GET /courses
+## 3. GET /
 
 Description:
 
-- Get all course from database
+- Get all data for landing page
+
+_Response (200 - OK)_
+
+```json
+{
+    "statusCode": 200,
+    "message": "Successfully read data",
+    "data": [
+        {
+            "id": 1,
+            "title": "Hot Take: The Bends is Radiohead's most influential album",
+            "content": "I KNOW I KNOW... just hear me out. I'm not claiming that The Bends is the most complex album nor the most experimental one, I'm claiming that The Bends was the one that inspired other bands the most.A whole new genre of popular bands got big inspiration from The Bends in the post-britpop movement. ",
+            "imgUrl": "",
+            "UserId": 1,
+            "CategoryId": 1,
+            "createdAt": "2022-09-14T12:05:26.361Z",
+            "updatedAt": "2022-09-14T12:05:26.361Z",
+            "User": {
+                "id": 1,
+                "username": "user1",
+                "firstName": "Nabiel",
+                "lastName": "Alif",
+                "password": "$2b$10$6/Z56ZhJvR88EiTzYsfD9ufHH/jv/PJom1o7rXk8v.OOD6UWpDI3i",
+                "createdAt": "2022-09-14T12:05:26.170Z",
+                "updatedAt": "2022-09-14T12:05:26.170Z"
+            }
+        },
+  },
+]
+```
+
+&nbsp;
+
+## 4. GET /thread/tech
+
+Description:
+
+- Get tech thread
 
 Request:
 
@@ -134,151 +159,47 @@ Request:
 
 ```json
 {
-  "access_token": "string"
+  "X-Api-Key": "8e30a36e57414f8f8aa49b4442b16121"
 }
 ```
 
 _Response (200 - OK)_
 
 ```json
-[
-  {
-    "id": 1,
-    "title": "Intro Vue",
-    "instructor": "Samuel Aditia",
-    "day": "Monday,Thursday,Saturday",
-    "imageUrl": "https://docs.vuejs.id/images/logo.png"
-  },
-  {
-    "id": 2,
-    "title": "REST API",
-    "instructor": "Wendy",
-    "day": "Wednesday,Friday",
-    "imageUrl": "https://billwerk.io/wp-content/uploads/sites/2/2019/05/icons-restapi-350x350.png"
-  },
-  {
-    "id": 3,
-    "title": "JQuery & Bootstrap",
-    "instructor": "Ayu Sudi",
-    "day": "Tuesday,Thursday",
-    "imageUrl": "https://www.kindpng.com/picc/m/445-4450455_css-logo-jquery-html-css-and-jquery-hd.png"
-  },
-  ...,
-]
+
+
+{
+    "statusCode": 200,
+    "message": "Successfully read data",
+    "data": {
+        "status": "ok",
+        "totalResults": 10,
+        "articles": [
+            {
+                "source": {
+                    "id": "techcrunch",
+                    "name": "TechCrunch"
+                },
+                "author": "Amanda Silberling",
+                "title": "Zoom is experiencing a major outage",
+                "description": "Users lost the ability to join meetings on Thursday morning.",
+                "url": "https://techcrunch.com/2022/09/15/zoom-is-experiencing-a-major-outage/",
+                "urlToImage": "https://techcrunch.com/wp-content/uploads/2020/09/zoom-glitch2.jpg?resize=1200,674",
+                "publishedAt": "2022-09-15T15:34:27Z",
+                "content": "If you had a meeting you really didn’t want to attend this morning, it’s your lucky day. Zoom’s status website shows that there is a major outage, affecting users’ ability to join meetings. According… [+797 chars]"
+            },
+
 ```
 
 &nbsp;
 
-## 4. POST /mycourses/:courseId
+## 5. GET /thread/:id
 
 Description:
 
-- Add course to my course
+- Get thread by id
 
 Request:
-
-- headers:
-
-```json
-{
-  "access_token": "string"
-}
-```
-
-- params:
-
-```json
-{
-  "courseId": "integer"
-}
-```
-
-_Response (201 - Created)_
-
-```json
-{
-  "id": 1,
-  "CourseId": 2,
-  "UserId": 1,
-  "status": "Uncompleted"
-}
-```
-
-_Response (404 - Not Found)_
-
-```json
-{
-  "message": "Course not found"
-}
-```
-
-&nbsp;
-
-## 5. GET /mycourses
-
-Description:
-
-- Get all my course from user
-
-Request:
-
-- headers:
-
-```json
-{
-  "access_token": "string"
-}
-```
-
-_Response (200 - OK)_
-
-```json
-[
-  {
-    "id": 2,
-    "UserId": 1,
-    "CourseId": 2,
-    "status": "Uncompleted",
-    "Course": {
-      "title": "REST API",
-      "instructor": "Edison",
-      "day": "Wednesday,Friday",
-      "imageUrl": "https://billwerk.io/wp-content/uploads/sites/2/2019/05/icons-restapi-350x350.png"
-    }
-  },
-  {
-    "id": 1,
-    "UserId": 1,
-    "CourseId": 1,
-    "status": "Completed",
-    "Course": {
-      "title": "Intro Vue",
-      "instructor": "Arnold Therigan",
-      "day": "Monday,Thursday,Saturday",
-      "imageUrl": "https://docs.vuejs.id/images/logo.png"
-    }
-  }
-  ...,
-]
-```
-
-&nbsp;
-
-## 6. PATCH /mycourses/:id
-
-Description:
-
-- Update my course to completed
-
-Request:
-
-- headers:
-
-```json
-{
-  "access_token": "string"
-}
-```
 
 - params:
 
@@ -292,42 +213,23 @@ _Response (200 - OK)_
 
 ```json
 {
-  "message": "Course has been completed"
-}
-```
-
-_Response (404 - Not Found)_
-
-```json
-{
-  "message": "Course not found"
-}
-```
-
-&nbsp;
-
-## Global Error
-
-_Response (401 - Unauthorized)_
-
-```json
-{
-  "message": "Invalid token"
-}
-```
-
-_Response (403 - Forbidden)_
-
-```json
-{
-  "message": "You are not authorized"
-}
-```
-
-_Response (500 - Internal Server Error)_
-
-```json
-{
-  "message": "Internal server error"
+  "statusCode": 200,
+  "message": "Successfully read data",
+  "data": {
+    "id": 2,
+    "title": "He's in the deepest ocean, the bottom of the sea",
+    "content": "Thom yorke at the bottom of the sea",
+    "imgUrl": "https://i.redd.it/etponhdr9on91.png",
+    "UserId": 1,
+    "CategoryId": 1,
+    "createdAt": "2022-09-14T12:05:26.361Z",
+    "updatedAt": "2022-09-14T12:05:26.361Z",
+    "User": {
+      "id": 1,
+      "username": "user1",
+      "firstName": "Nabiel",
+      "lastName": "Alif"
+    }
+  }
 }
 ```

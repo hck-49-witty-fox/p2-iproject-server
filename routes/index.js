@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const ThreadController = require('../controllers/threadController');
 
-const { spotify } = require('../helpers/helpers');
 const errorHandler = require('../middlewares/errorHandler');
 
 const thread = require('./thread');
