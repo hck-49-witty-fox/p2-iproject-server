@@ -1,8 +1,8 @@
  Hacktiv Course API Documentation
 
 ### Deployed server
-- https://phase2-livecode2-1st.herokuapp.com/
-- https://phase2-livecode2-2nd.herokuapp.com/
+-  https://iproject-hck8-49.web.app/
+-  https://fathomless-shelf-05727.herokuapp.com/
 
 
 ## Endpoints :
