@@ -18,11 +18,15 @@ app.use((err, req, res, next) => {
     let msg = `Internal Server Error`
     console.log(err);
     switch (err.name) {
-        case `Bad Request`:
+        case `Email or Username and Password is Invalid`:
             code = 400
             msg = err.name
             break;
         case `Unathorized`:
+            code = 401
+            msg = err.name
+            break;
+        case `Invalid Input`:
             code = 401
             msg = err.name
             break;
