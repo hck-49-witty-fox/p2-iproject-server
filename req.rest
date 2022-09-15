@@ -1,0 +1,36 @@
+GET http://localhost:3000/games?ordering=name
+Content-Type: application/json
+
+
+
+###
+GET  http://localhost:3000/games/detail/3498
+
+###
+POST  http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "email": "imran@mail.com",
+    "password": "imran123"
+}
+
+###
+
+POST  http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email": "imran@mail.com",
+    "password": "imran123"
+}
+
+###
+
+POST  http://localhost:3000/playlist/3498
+Content-Type: application/json
+access_token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjYzMTQ5MDMyfQ.6YpRBZiS9Qyl5KiFXlcSPepBgdWrQUQslADMQu3eqBc
+
+
+
+
