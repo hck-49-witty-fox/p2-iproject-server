@@ -1,0 +1,42 @@
+[
+  {
+    "username": "User1",
+    "email": "user1@mail.com",
+    "password": "12345",
+    "fullname": "User Satu",
+    "gender": "female",
+    "birthyear": "2000",
+    "location": "Jakarta",
+    "imgUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.sciencephoto.com%2Fimage%2Fc0313823%2F800wm%2FC0313823-Woman.jpg&f=1&nofb=1"
+  },
+  {
+    "username": "User2",
+    "email": "user2@mail.com",
+    "password": "12345",
+    "fullname": "User Dua",
+    "gender": "male",
+    "birthyear": "1999",
+    "location": "Tangerang",
+    "imgUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.stereogum.com%2Fuploads%2F2015%2F04%2FDMX.jpg&f=1&nofb=1"
+  },
+  {
+    "username": "User3",
+    "email": "user3@mail.com",
+    "password": "12345",
+    "fullname": "User Tiga",
+    "gender": "male",
+    "birthyear": "1989",
+    "location": "Surabaya",
+    "imgUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ffamewatcher.com%2Fwp-content%2Fuploads%2F2020%2F07%2Findonesian-male-models-Rio-Dewanto2.jpg&f=1&nofb=1"
+  },
+  {
+    "username": "User4",
+    "email": "user4@mail.com",
+    "password": "12345",
+    "fullname": "User Empat",
+    "gender": "female",
+    "birthyear": "1993",
+    "location": "Jakarta",
+    "imgUrl": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fjolierodriguezphotography.com%2Fwp-content%2Fuploads%2F5T0A9855-1_pp-960x1440.jpg&f=1&nofb=1"
+  }
+]
